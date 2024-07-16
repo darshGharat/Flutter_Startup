@@ -1,7 +1,6 @@
-import 'dart:math';
 
+import 'package:adv_basic/custom_widget/show_question_index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuestionSummary extends StatelessWidget {
@@ -11,7 +10,7 @@ class QuestionSummary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log(summary.length);
+    
     return SizedBox(
       height: 400,
       child: SingleChildScrollView(
@@ -26,14 +25,7 @@ class QuestionSummary extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        DecoratedBox(
-                          decoration: const BoxDecoration(
-                              shape: BoxShape.circle, color: Colors.cyan),
-                          child: Padding( padding: EdgeInsets.all(10),
-                            child: Text(
-                                ((item['question_index'] as int) + 1).toString()),
-                          ),
-                        ),
+                      ShowQuestionIndex(item: item,),
                         const SizedBox(
                           width: 10,
                         ),
@@ -46,21 +38,21 @@ class QuestionSummary extends StatelessWidget {
                                 Text(
                                   item['question'] as String,
                                   style: GoogleFonts.lato(
-                                      color: Color.fromARGB(213, 219, 134, 230),
+                                      color: const Color.fromARGB(213, 219, 134, 230),
                                       fontSize: 18,
                                       fontWeight: FontWeight.normal),
                                 ),
                                 Text(
                                   item['answer'] as String,
                                   style: GoogleFonts.lato(
-                                      color: Color.fromARGB(245, 201, 102, 220),
+                                      color: const Color.fromARGB(245, 201, 102, 220),
                                       fontSize: 14,
                                       fontWeight: FontWeight.normal),
                                 ),
                                 Text(
                                   item['selected_answer'] as String,
                                   style: GoogleFonts.lato(
-                                      color: Color.fromARGB(255, 119, 95, 218),
+                                      color: const Color.fromARGB(255, 119, 95, 218),
                                       fontSize: 14,
                                       fontWeight: FontWeight.normal),
                                 )
