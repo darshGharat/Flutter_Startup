@@ -43,7 +43,7 @@ class ResultsScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              QuestionSummary(getSummary()),
+              QuestionSummary(summaryData),
               const SizedBox(
                 height: 20,
               ),
